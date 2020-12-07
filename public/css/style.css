@@ -1,0 +1,46 @@
+.bord{
+  border: solid 1px;
+}
+
+
+
+#three{
+  margin: 4rem;
+}
+
+.card-z{}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.head{
+  font-family: system-ui;
+  font-weight: 200;
+}
+
+.text-content{
+      font-family: system-ui;
+      font-weight: 400;
+}
+
+#mybtn{
+border-radius: 50px;
+margin-left: 0rem;
+}
+
+.text-head{
+margin-left: 5rem;
+margin-top: 11rem;
+}
+
+.text-header{
+  margin-left: 1.5rem;
+margin-top: 5rem;
+}

@@ -1,0 +1,135 @@
+
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col s6" >
+                <div class="text-head">
+                  <h2 class="head">Améliorer votre formation</h2>
+                  <p class="text-content">Nous disposons de nombreux cours pour vous garantir une formation de qualité avec un niveau très compétitif sur le marché.</p>
+                  <br>
+                  {{#if user.username }}
+                  <p><a href="/login" class="waves-effect waves-light btn-large btn" id="mybtn"   style="background-color: #42a5f5;">Commencer </a></p>
+                    {{else}}
+                  <p><a href="/course" class="waves-effect waves-light btn-large btn" id="mybtn"   style="background-color: #42a5f5;">Commencer </a></p>
+                  {{/if }}
+                </div>
+              </div>
+              <div class="col s6 " style="margin-top: 2rem;">
+                <img src="/assets/img/5514.jpg" style="width: 100%;" alt="">
+              </div>
+          </div>
+      </div>
+
+    <br><br>
+
+      <div class="container-fluid ">
+          <div class="row" id="three">
+              <div class="col s4  card-z">
+                <div class="card">
+                    <div class="card-image">
+                      <p style="text-align:center;"><i class="large material-icons" style="margin-top:3rem;color:#8c9eff">library_books</i></p>
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title">Bonnes formations</span>
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                 
+                  </div>
+              </div>
+              <div class="col s4  card-z">
+                <div class="card">
+                    <div class="card-image">
+                     <p style="text-align:center;"><i class="large material-icons" style="margin-top:3rem;color:#8c9eff">perm_identity</i></p>
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title">Excellents formateurs</span>
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    
+                  </div>
+              </div>
+              <div class="col s4  card-z">
+                <div class="card">
+                    <div class="card-image">
+                      <p style="text-align:center;"><i class="large material-icons" style="margin-top:3rem;color:#8c9eff">attach_money</i></p>
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title">Prix abordables</span>
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    <br><br><br><br><br><br>
+
+      <div class="container-fluid ">
+          <div class="row">
+              <div class="col s6 ">
+                <img src="/assets/img/img.jpg" alt="">
+              </div>
+              <div class="col s6 ">
+                <div class="text-header">
+                  <h2 class="head">Plus de possibilités</h2>
+                  <p class="text-content">Les cours en ligne offrent la possibilité d'apprendre à presque tout le monde, quels que soient leurs engagements en matière d'horaire.</p>
+                  <br>
+                  <p><a href="" class="waves-effect waves-light btn-large btn" id="mybtn" style="background-color: #42a5f5;">Lire Plus </a></p>
+                </div>
+              </div>
+              </div>
+          </div>
+      </div>
+
+     <br><br><br><br><br><br>
+
+      <div class="container-fluid ">
+          <div>
+              <h1 style="text-align: center;">Cours récents</h1>
+          </div>
+        <div class="row" id="three">
+          {{#each cours }}
+            <div class="col s4  card-z">
+              <div class="card">
+                  <div class="card-image">
+                    <img src="/assets{{ this.image }}">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title">{{ this.title }}</span>
+                    <p>{{ this.description }}.</p>
+                  </div>
+                  <div class="card-action">
+                    <span>{{ this.category }}</span>
+                  </div>
+                </div>
+            </div>
+            {{/each}}
+            
+        </div>
+      </div>
+
+     <br><br><br><br><br><br>
+
+      <div class="container-fluid" style="padding: 3rem;">
+        <div class="row">
+            <div class="col s6">
+              <div class="text-header">
+                <h2 class="head">Devenir professeur</h2>
+                <p class="text-content">Les cours en ligne offrent la possibilité d'apprendre à presque tout le monde, quels que soient leurs engagements en matière d'horaire.</p>
+                <br>
+                <p><a href="" disabled class="waves-effect waves-light btn-large btn" id="mybtn" style="background-color: #42a5f5;">Lire Plus </a></p>
+              </div>
+            </div>
+            <div class="col s6 ">
+              <img src="/assets/img/header.jpg" style="width: 100%;" alt="">
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>

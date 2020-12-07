@@ -1,0 +1,56 @@
+ 
+      <div class="container-fluid">
+        <form action="/course/updateCourse" method="POST" enctype="multipart/form-data">
+        <div class="row">
+           <div class="col s9 " style="padding:5rem">
+              <h4>Donnée textuelle</h4>
+              <div class="row">
+                <div class="input-field col s6">
+                <input placeholder="Saisir le Titre" name="title" id="first_name" type="text" class="validate" value="{{ cours.title }}">
+                <label for="first_name">Titre du cours</label>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                      <select name="category" value="{{ cours.category }}">
+                        <option value="" disabled selected>Choisir catégorie</option>
+                        <option value="physique">Physique</option>
+                        <option value="chimie">Chimie</option>
+                      </select>
+                      <label>Catégorie</label>
+                    </div>
+              </div>
+            </div>
+            <div class="input-field col s12">
+              <textarea id="textarea2" name="description" value="{{ cours.description }}" class="materialize-textarea" data-length="120"></textarea>
+              <label for="textarea2">Saisir la description du cours</label>
+            </div>
+
+            <div class="row" style="margin-top: 16rem;">
+              <h4 style="text-align: center;">Saisie du cours</h4>
+              <div class="input-field col s12">
+                <textarea name="editor1" value="{{ cours.contentCourse }}"></textarea>
+              </div>
+            </div>
+           </div>
+
+           <div class="col s3 " style="padding:1rem;margin-top:5.5rem">
+            
+           </div>
+
+           
+           
+        </div>
+        <div align="center">
+          <input type="hidden" name="_id" value="{{ cours._id }}">
+          <input type="hidden" name="_author" value="{{cours._idAuthor}}">
+          <button class="waves-effect waves-light btn-large" type="submit" name="submit" style="width: 80%;border-radius: 30px;">Publier le cours</button>
+         </div>
+         </form>
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+    
+    

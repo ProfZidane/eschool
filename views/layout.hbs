@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/profile.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/setup.css">
+
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>  
+
+
+  </head>
+  <body>
+    <!--navbar-->
+    <nav style="background-color: #fff;box-shadow:0.5px;">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo" style="color: black; font-size:25px;font-weight:400;">&nbsp;&nbsp;&nbsp; E-SCHOOL</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" style="color: black;">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/" style="color: black;">Accueil</a></li>
+            <li><a href="/course" style="color: black;">Cours</a></li>
+            <!--<li><a href="collapsible.html" style="color: black;">Zoom conférence</a></li>-->
+            <li><a href="/about" style="color: black;">A propos</a></li>
+            <li><a href="collapsible.html" style="color: black;">Contact</a></li>
+            {{#if user}}
+            <li style="background-color:rgb(114, 114, 226)"><a style="color:black" class="dropdown-trigger" href="#!" data-target="dropdown1">{{user}}</a></li>
+            {{else}}
+            <li><a class="waves-effect waves-light btn-small" style="background-color: #42a5f5;" href="/login">S'inscrire</a></li>
+            {{/if}}
+            <!--<li><a class="dropdown-trigger" style="color: black;" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right" >arrow_drop_down</i></a></li>-->
+        </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="/" style="color: black;">Accueil</a></li>
+        <li><a href="/course" style="color: black;">Cours</a></li>
+        <li><a href="collapsible.html" style="color: black;">Zoom conférence</a></li>
+        <li><a href="mobile.html" style="color: black;">A propos</a></li>
+        <li><a href="collapsible.html" style="color: black;">Contact</a></li>
+        
+        {{#if user.username}}
+            <li style="background-color:#42a5f5"><a style="color:black" class="dropdown-trigger"  data-target="">{{user.username}}</a></li>
+            {{else}}
+            <li><a class="waves-effect waves-light btn-small" href="/login" style="background-color: #42a5f5;">S'inscrire</a></li>
+        {{/if}}
+      </ul>
+
+      {{#if nameT}}
+              <ul id="dropdown1" class="dropdown-content">
+                <li><a href="/profile-teacher/{{Mysession._id}}" style="color: black;"><i class="small material-icons">account_circle</i> Profile</a></li>
+                <li class="divider" style="color: black;"></li>
+                <li><a href="/users/logout" style="color: black;">Déconnexion</a></li>
+              </ul>
+      {{else}}
+              <ul id="dropdown1" class="dropdown-content">
+                <li><a href="/profile-student/{{Mysession._id}}" style="color: black;"><i class="small material-icons">account_circle</i> Profile</a></li>
+                <li class="divider" style="color: black;"></li>
+                <li><a href="/users/logout" style="color: black;">Déconnexion</a></li>
+              </ul>
+      {{/if}}
+
+
+
+    {{{body}}}
+
+
+        <footer class="page-footer" style="background-color: #42a5f5 ;">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">E-SCHOOL</h5>
+              <p class="grey-text text-lighten-4">Nous sommes là pour vous fournir de l'enseignement de qualite.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Réseaux sociaux</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Linkedin</a></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2020 Copyright
+          <a class="grey-text text-lighten-4 right" href="http://portofolio-zidane.epizy.com/">Designed by MZ</a>
+          </div>
+        </div>
+      </footer>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/ckeditor.js"></script>
+
+    <script>
+
+        $(".dropdown-trigger").dropdown();
+        
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+
+        $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+   $(document).ready(function(){
+    $('select').formSelect();
+  });
+
+    $(document).ready(function(){
+    $('.modal').modal();
+  });
+        
+    </script>
+</html>

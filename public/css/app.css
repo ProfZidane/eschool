@@ -1,0 +1,15 @@
+
+p,h2,h3,h4,h1,h5{
+    font-family: system-ui;
+  }
+
+
+
+.bord{
+    border: solid 1px;
+}
+
+.mini{
+    width: 40%;
+    margin-left: 2rem;
+}

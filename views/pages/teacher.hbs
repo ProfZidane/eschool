@@ -1,0 +1,180 @@
+<br><br>
+
+      <div class="container-fluid ">
+          <div class="row">
+              <div class="col s3 ">
+                <div class="profile">
+                    {{#if info.image}}
+                        <img src="/assets{{ info.image }}" alt="" style="width: 65%;height:200px;position: relative;left: 17%;top: 45px;">
+                    {{else}}
+                    <img src="https://cdn.pixabay.com/photo/2016/08/09/17/52/instagram-1581266_960_720.jpg" style="width: 65%;position: relative;left: 17%;top: 45px;" alt="">
+                    {{/if}}
+                </div>
+                <div class="container ">
+                    <p>INFORMATION PROFILE</p>
+                        <h6><strong>{{ info.name }}</strong></h6>
+                        <h6><strong>{{ info.grade }}</strong></h6>
+                        <span>Enseignant</span>
+
+                    <div>
+                        <p> <a class="modal-trigger" href="#modal1"> <i class="small material-icons">image</i> Changer photo de profil</a></p>
+                    </div>
+                </div>
+                
+              </div>
+              <div class="col s9">
+                <div>
+                    <h2 style="font-weight: 200;">{{ info.name }}</h2>
+                </div>
+                <div>
+                    <h4 style="font-weight: 200;">Biographie</h4>
+                </div>
+                <div>
+                    {{#if info.biographie}}
+                    <p>
+                        {{ info.biographie }}
+                    </p>
+                    {{else}}
+                    <p>
+                        <a class="modal-trigger" href="#modal2"><i class="material-icons">create</i> Ajoutez une biographie</a>
+                    </p>
+                    {{/if}}
+                </div>
+              </div>
+              
+          </div>
+          <hr style="width: 70%;position: relative;left: 12%;">
+      </div>
+
+      <div class="container-fluid ">
+          <div class="row">
+              <div class="col s3">
+
+              </div>
+              <div class="col s9 ">
+                  <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col s9">
+                            <h5>Cours</h5>
+                        </div>
+                        <div class="col s3 " >
+                            <a class="waves-effect waves-light btn btn-small" href="/course-setup/{{info._id}}" style="margin: 0.5rem;"><i class="material-icons">add</i>&nbsp; Ajouter cours</a>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid ">
+                        <div class="row">
+                          {{#each cours}}
+                            <div class="col s4">
+                                <div class="card">
+                                    <div class="card-image">
+                                      <p style="text-align:center;"><i class="large material-icons" style="margin-top:3rem;">library_books</i></p>
+                                    </div>
+                                    <div class="card-content">
+                                      <span class="card-title">{{ this.title }}</span>
+                                      <p>{{ this.description }}</p>
+                                    </div>
+                                    <div align="center">
+                                        <a class="waves-effect waves-light btn btn-small" href="/course-content/{{this._id}}">Démarrer</a>
+                                       <!-- <a class="waves-effect waves-light btn btn-small" href="/update-cours/{{this._id}}" style="background-color: #ffc400 ;">Modifier</a>-->
+                                        <a class="waves-effect waves-light btn btn-small" href="/course/delete-cours/{{this._id}}" style="background-color: #f44336;">Supprimer</a>
+                                    </div>
+                                    <br>
+                                    <div class="card-action">
+                                        <span href="#">{{ this.category }}</span>
+                                      </div>
+                                  </div>
+                            </div>
+                            {{/each }}
+                           <!-- <div class="col s4">
+                                <div class="card">
+                                    <div class="card-image">
+                                      <p style="text-align:center;"><i class="large material-icons" style="margin-top:3rem;">library_books</i></p>
+                                    </div>
+                                    <div class="card-content">
+                                      <span class="card-title">Bonnes formations</span>
+                                      <p>I am a very simple card. I am good at containing small bits of information.
+                                      I am convenient because I require little markup to use effectively.</p>
+                                    </div>
+                                    <div align="center">
+                                        <a class="waves-effect waves-light btn btn-small">Démarrer</a>
+                                        <a class="waves-effect waves-light btn btn-small" style="background-color: #ffc400 ;">Modifier</a>
+                                        <a class="waves-effect waves-light btn btn-small" style="background-color: #f44336;">Supprimer</a>
+                                    </div>
+                                    <br>
+                                    <div class="card-action">
+                                        <p href="#">This is a link</p>
+                                      </div>
+                                    </div>
+                            </div>
+                            <div class="col s4">
+                                <div class="card">
+                                    <div class="card-image">
+                                      <p style="text-align:center;"><i class="large material-icons" style="margin-top:3rem;">library_books</i></p>
+                                    </div>
+                                    <div class="card-content">
+                                      <span class="card-title">Bonnes formations</span>
+                                      <p>I am a very simple card. I am good at containing small bits of information.
+                                      I am convenient because I require little markup to use effectively.</p>
+                                    </div>
+                                    <div align="center">
+                                        <a class="waves-effect waves-light btn btn-small">Démarrer</a>
+                                        <a class="waves-effect waves-light btn btn-small" style="background-color: #ffc400 ;">Modifier</a>
+                                        <a class="waves-effect waves-light btn btn-small" style="background-color: #f44336;">Supprimer</a>
+                                    </div>
+                                    <br>
+                                    <div class="card-action">
+                                        <p href="#">This is a link</p>
+                                      </div>
+                                  </div>
+                            </div>-->
+                        </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+      </div>
+
+<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Changer photo de profil</h4>
+      <br>
+      <form action="/file/ChangeProfileTea/{{info._id}}" method="POST" enctype="multipart/form-data">
+        <div class="file-field input-field" >
+          <div class="btn">
+            <span>Image</span>
+            <input type="file" name="fileProfile">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" placeholder="Choisir sa photo ..." type="text" name="fileProfileName">
+          </div>
+        </div>    
+    </div>         
+    <div class="modal-footer">
+      <button class="modal-close waves-effect waves-green btn-flat" type="submit">Valider</button>
+    </div>
+    </form>
+  </div>
+
+  <!-- Modal Structure 2 bio -->
+    <div id="modal2" class="modal">
+    <div class="modal-content">
+        <h4>Ajout une biographie</h4>
+      <br>
+         <div class="row">
+            <form class="col s12" action="/file/changeBio/{{info._id}}" method="POST">
+            <div class="row">
+                <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" name="biographie"></textarea>
+                <label for="textarea1">Biographie</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-close waves-effect waves-green btn-flat" type="submit">Valider</button>
+    </div>
+    </form>
+  </div>
+  

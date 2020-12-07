@@ -1,0 +1,140 @@
+
+ <div class="container-fluid ">
+    {{#if alert}}
+        <div class="alert alert-warning" align="center">
+              Veuillez avant-tout vous inscrire ou vous connecter !        
+        </div>  
+      {{/if}}
+               
+         <div class="row">
+             <div class="col s6 b"  style="margin:2rem;width:45%;background-color ;box-shadow:4px 4px 6px #aaa" >
+               {{#if message}}
+               <div align="center" class="container alert">
+                 
+                 <p class="alert-mgs">Veuillez a présent vous authentifiez !</p>
+                 
+               </div>
+               {{/if}}
+
+
+                {{#if err}}
+               <div align="center" class="container alert">
+                 
+                 <p class="alert-mgs">{{ err }}</p>
+                 
+               </div>
+               {{/if}}
+
+
+                <div align="center">
+                  <h4>Connexion</h4>
+                </div>
+                <div class="row">
+                    <form action="/users/login" method="POST" class="col s12" style="padding:2rem;position: relative;left: 20%;">
+                        <div class="row">
+                            <div class="input-field col s6">
+                              <i class="material-icons prefix">account_circle</i>
+                            <input placeholder="Entrer votre mail" name="username" id="first_name" type="email" class="validate">
+                            <label for="first_name">Adresse mail</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s6">
+                            <i class="material-icons prefix">lock</i>
+                          <input placeholder="Entrer votre mot de passe" type="password" name="password"  id="first_name" class="validate">
+                          <label for="first_name">Mot de passe</label>
+                          </div>
+                      </div>
+                      <p>
+                        <label>
+                          <input type="checkbox" name="remember" />
+                          <span>Se rappeler de moi</span>
+                        </label>
+                      </p>
+                      <div class="row" align='center'>
+                        <div class="input-field col s6">
+                          <button class="btn waves-effect waves-light mybtn" type="submit" name="action" style="width: 100%;">Se connecter
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+                
+             </div>
+             <div class="col s6 b"  style="margin:2rem;width:45%;background-color:;box-shadow:4px 4px 6px #aaa" >
+              <div align="center">
+                <h4>Inscription</h4>
+              </div>
+              <div class="row">
+                  <form action="/users/register" method="POST" class="col s12" style="padding:2rem;position: relative;">
+                      <div class="row">
+                          <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                          <input placeholder="Entrer votre nom d'utilisateur" id="first_name" name="username" type="text" class="validate">
+                          <label for="first_name">Nom d'utilisateur</label>
+                          </div>
+                          <div class="input-field col s6">
+                            <i class="material-icons prefix">email</i>
+                          <input placeholder="Entrer votre adresse e-mail" id="first_name" name="email" type="email" class="validate">
+                          <label for="first_name">E-mail</label>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <i class="material-icons prefix">attach_money</i>
+                        <input placeholder="Entrer numéro de paiement" id="first_name" name="number" type="text" class="validate">
+                        <label for="first_name">Paiement</label>
+                        </div>
+                        <div class="input-field col s6">
+                        <i class="material-icons prefix">book</i>
+                        <select name="course">
+                        <option value="" disabled selected>Choisir cours</option>
+                        <option value="physique">Physique</option>
+                        <option value="chimie">Chimie</option>
+                      </select>
+                      <label>Cours</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="input-field col s12">
+                          <i class="material-icons prefix">lock</i>
+                        <input placeholder="Entrer votre mot de passe" id="first_name" name="password" type="password" class="validate">
+                        <label for="first_name">Mot de passe</label>
+                        </div>
+                    </div>
+                    
+                     
+                    <div class="row" align='center'>
+                      <div class="input-field col s12">
+                        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                        <button class="btn waves-effect waves-light mybtn" type="submit" name="action" style="width: 100%;">S'inscrire
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+              </div>
+             </div>
+            
+         </div>
+         <!--<div class="container" align="center">
+           <h5>Ou bien utiliser</h5>
+          <div class="row">
+            <div class="col s6">
+              <a class="waves-effect waves-light btn mybtn" style="width: 85%;">Continuer avec Facebook</a>
+            </div>
+            <div class="col s6">
+              <a class="waves-effect waves-light btn mybtn" style="width: 85%;">Continuer avec Google</a>
+            </div>
+          </div>
+        </div>-->
+      </div>
+
+ <style>
+    .alert{
+      
+      border-radius: 0.5rem;
+      background-color: #ffeb3b;
+    }
+
+   *
+ </style>

@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="container">
+         <form action="/users/TEA" method="POST" class="col s12" style="padding:2rem;position: relative;">
+                      <div class="row">
+                          <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                          <input placeholder="Entrer votre nom " id="first_name" name="name" type="text" class="validate">
+                          <label for="first_name">Nom</label>
+                          </div>
+                            <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                          <input placeholder="Entrer votre prénom" id="first_name" name="firstname" type="text" class="validate">
+                          <label for="first_name">Prénom</label>
+                          </div>
+                          <div class="input-field col s6">
+                            <i class="material-icons prefix">email</i>
+                          <input placeholder="Entrer votre adresse e-mail" id="first_name" name="email" type="email" class="validate">
+                          <label for="first_name">E-mail</label>
+                          </div>
+                           <div class="input-field col s6">
+                        <i class="material-icons prefix">book</i>
+                        <select name="grade">
+                        <option value="" disabled selected>Choisir cours</option>
+                        <option value="Professeur">Professeur</option>
+                        <option value="Docteur">Docteur</option>
+                        <option value="Ingénieur">Ingénieur</option>
+                      </select>
+                      <label>Grade</label>
+                        </div>
+                      </div>
+                    
+                     
+                    <div class="row" align='center'>
+                      <div class="input-field col s6">
+                        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                        <button class="btn waves-effect waves-light mybtn" type="submit" name="action" style="width: 100%;">S'inscrire
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+    </div>
+</div>
