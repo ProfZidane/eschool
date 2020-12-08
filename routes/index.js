@@ -21,7 +21,7 @@ let TeachInfo = [];
 let CourseInfo = [];
 let IndexListeCourse = [];
 
-mongoose.connect(process.env.DB_CONNECT,
+mongoose.connect("mongodb+srv://zidane:eschool@2020@cluster0-dlebu.mongodb.net/test?retryWrites=true&w=majority",
   { useNewUrlParser : true },
   ()=>{
     console.log('connected ....');
